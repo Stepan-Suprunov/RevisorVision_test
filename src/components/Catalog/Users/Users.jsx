@@ -4,27 +4,25 @@ import {useEffect, useState} from "react";
 
 const Users = () => {
 
-    const [users, setUsers] = useState("users");
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
         axios.get(
             'api/users', {withCredentials: false}
-    )
+        )
             .then((response) => {
                 const allUsers = response.data;
                 setUsers(allUsers);
             });
     }, [setUsers]);
 
-    console.log(users);
+    const usersFromLocalState = users.map((user) => <User userName={user.name} userID={user.id}/>);
 
-    // const usersFromLocalState = users.map((user) => <User userName={user.name} />);
-
-  return (
-    <div>
-
-    </div>
-  );
+    return (
+        <ul>
+            {usersFromLocalState}
+        </ul>
+    );
 };
 
 export default Users;
