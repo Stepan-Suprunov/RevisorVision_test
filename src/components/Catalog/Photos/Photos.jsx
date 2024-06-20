@@ -16,11 +16,9 @@ const Photos = (props) => {
             });
     }, [setPhotos]);
 
-    const photosFromLocalState = photos.map((photo) => <Photo photoURL={photo.url}/>);
-
     return (
         <div>
-            {photosFromLocalState}
+            {photos.map((photo) => <Photo photoURL={photo.url}/>)}
         </div>
     );
 };

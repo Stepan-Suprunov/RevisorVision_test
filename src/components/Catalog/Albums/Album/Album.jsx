@@ -10,25 +10,11 @@ const Album = (props) => {
         setPhotos((prevState) => !prevState);
     };
 
-    const buttonChange = () => {
-        if (photos) return '-'
-        else return '+'
-    };
-
-    const showPhotos = () => {
-        if (photos) {
-            return (
-                <Photos albumID={props.albumID}/>
-            );
-        }
-        else return null;
-    };
-
     return (
         <li>
-            <button onClick={onButtonClick}>{buttonChange()}</button>
+            <button onClick={onButtonClick}>{photos ? '-' : '+'}</button>
             <span>{props.albumTitle}</span>
-            <ul>{showPhotos()}</ul>
+            <ul>{photos ? <Photos albumID={props.albumID}/> : null}</ul>
         </li>
     );
 };

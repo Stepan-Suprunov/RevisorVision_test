@@ -16,11 +16,9 @@ const Albums = (props) => {
             });
     }, [setAlbums]);
 
-    const albumsFromLocalState = albums.map((album) => <Album albumTitle={album.title} albumID={album.albumId}/>);
-
     return (
         <li>
-                {albumsFromLocalState}
+                {albums.map((album) => <Album albumTitle={album.title} albumID={album.albumId}/>)}
         </li>
     );
 };

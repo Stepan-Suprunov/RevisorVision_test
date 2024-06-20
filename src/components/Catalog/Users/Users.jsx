@@ -16,11 +16,9 @@ const Users = () => {
             });
     }, [setUsers]);
 
-    const usersFromLocalState = users.map((user) => <User userName={user.name} userID={user.id}/>);
-
     return (
         <ul>
-            {usersFromLocalState}
+            {users.map((user) => <User key={user.id} userName={user.name} userID={user.id}/>)}
         </ul>
     );
 };
