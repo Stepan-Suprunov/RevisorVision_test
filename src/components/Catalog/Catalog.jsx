@@ -1,8 +1,8 @@
-import Users from "./Users/Users";
+import UsersContainer from "./Users/User/UsersContainer";
 
 const Catalog = () => {
     return <div>
-        <Users/>
+        <UsersContainer/>
     </div>
 };
 
