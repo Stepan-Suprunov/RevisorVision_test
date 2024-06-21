@@ -1,8 +1,17 @@
 const USERS_FETCH = 'USERS-FETCH';
 
-const initialState = {};
+const initialState = {
+    users: []
+};
 
 export const usersReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case USERS_FETCH:
+            return {
+                ...state,
+                users: action.users
+            };
+    };
     return state;
 };
 

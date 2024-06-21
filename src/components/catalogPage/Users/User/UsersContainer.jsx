@@ -2,6 +2,7 @@ import axios from "axios";
 import {connect} from "react-redux";
 import Users from "../Users";
 import {usersFetchActinCreator} from "../../../../redux/usersReducer";
+import store from "../../../../redux/store";
 
 axios.get(
     'api/users', {withCredentials: false}
@@ -10,9 +11,11 @@ axios.get(
         usersFetchActinCreator(response.data);
     });
 
+console.log(store.state)
+
 const mapStateToProps = (state) => {
     return {
-        users: state.users
+        users: store.state.users
     };
 };
 
