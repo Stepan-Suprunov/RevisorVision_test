@@ -1,8 +1,8 @@
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Catalog from "./components/Catalog/Catalog";
-import Favourites from "./components/Favourites/Favourites";
+import Favourites from "./components/favouritesPage/Favourites";
+import UsersContainer from "./components/catalogPage/Users/User/UsersContainer";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Navbar/>
           <div className='app-wrapper-content'>
             <Routes>
-                <Route path="/catalog/*" element={<Catalog/>} />
+                <Route path="/catalog/*" element={<UsersContainer/>} />
                 <Route path="/favourites/*" element={<Favourites/>} />
             </Routes>
           </div>
