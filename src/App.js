@@ -2,7 +2,7 @@ import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Favourites from "./components/favouritesPage/Favourites";
-import UsersContainer from "./components/catalogPage/Users/User/UsersContainer";
+import UsersContainer from "./components/catalogPage/Users/UsersContainer";
 
 function App() {
   return (

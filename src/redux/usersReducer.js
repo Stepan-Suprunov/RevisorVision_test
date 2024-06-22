@@ -1,18 +1,16 @@
 const USERS_FETCH = 'USERS-FETCH';
 
-const initialState = {
-    users: []
-};
+const initialState = [];
 
 export const usersReducer = (state = initialState, action) => {
+    console.log(action, 'экшоны приходящие в редюсер');
     switch (action.type) {
         case USERS_FETCH:
-            return {
-                ...state,
-                users: action.users
-            };
+            return ([
+                ...action.users
+            ]);
     };
     return state;
 };
 
-export const usersFetchActinCreator = (users) => ({type: USERS_FETCH, users});
+export const usersFetchActionCreator = (users) => ({type: USERS_FETCH, users});
