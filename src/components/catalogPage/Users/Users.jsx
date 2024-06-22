@@ -3,7 +3,6 @@ import {useEffect} from "react";
 import axios from "axios";
 
 const Users = (props) => {
-    console.log(props, "пропсы приходящие в Users");
     useEffect(() => {
         axios.get(
             'api/users', {withCredentials: false}
