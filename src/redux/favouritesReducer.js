@@ -6,18 +6,15 @@ const initialState = [];
 export const favouritesReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_PICTURE: {
-            let stateCopy = [...state];
-            let flag = false;
-            for (let i = 0; i < stateCopy.length; i++) {
-                if (stateCopy[i].id === action.picture.id) flag = true;
-            };
-            if (flag) stateCopy.append(action.picture);
 
-            return stateCopy;
+            if (state.find(picture => picture.id === action.picture.id)) {
+                return state;
+            };
+            return [...state, action.picture];
         };
 
         case REMOVE_PICTURE: {
-            let stateCopy = state.filter(picture => picture.id !== action.picture.id);
+            const stateCopy = state.filter(picture => picture.id !== action.picture.id);
 
             return stateCopy;
         };
@@ -28,4 +25,4 @@ export const favouritesReducer = (state = initialState, action) => {
 };
 
 export const addPictureActionCreator = (picture) => ({type: ADD_PICTURE, picture});
-export const removePictureActionCreator = (picture) => ({type: ADD_PICTURE, picture});
+export const removePictureActionCreator = (picture) => ({type: REMOVE_PICTURE, picture});

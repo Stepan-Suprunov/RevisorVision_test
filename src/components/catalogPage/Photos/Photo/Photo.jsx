@@ -1,27 +1,20 @@
 import {useState} from "react";
-import FavouritesContainer from "../../../favouritesPage/FavouritesContainer";
-import store from "../../../../redux/store";
+import {connect} from "react-redux";
+import {addPictureActionCreator, removePictureActionCreator} from "../../../../redux/favouritesReducer";
 
 const Photo = (props) => {
 
-    const [favourite, setFavourite] = useState(false);
-
+    const [favourite, setFavourite] = useState(props.favourite);
+console.log(favourite);
     const onButtonFavouriteClick = () => {
         setFavourite((prevState) => !prevState);
 
-        if (favourite) {
-            return (
-                <FavouritesContainer photo={props.photo} action={true}/>
-            );
-        };
         if (!favourite) {
-            return (
-                <FavouritesContainer photo={props.photo} action={false}/>
-            );
+            props.addPictureActionCreator(props.photo);
+        } else {
+            props.removePictureActionCreator(props.photo);
         };
     };
-
-    console.log(store.getState());
 
     return (
         <li>
@@ -31,4 +24,4 @@ const Photo = (props) => {
     );
 };
 
-export default Photo;
+export default connect(null, {addPictureActionCreator, removePictureActionCreator})(Photo);

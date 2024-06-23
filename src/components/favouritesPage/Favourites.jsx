@@ -1,20 +1,14 @@
-import Favourite from "./Favourite/Favourite";
+import Photo from "../catalogPage/Photos/Photo/Photo";
 
 const Favourites = (props) => {
 
-    if (props.action) {
-        props.addPictureActionCreator(props.photo);
-    };
-    if (!props.action) {
-        props.removePictureActionCreator(props.photo);
-    };
 
-    if (props.favourites !== undefined && props.favourites !== null) {
+    if (props.favourites.length > 0) {
         return (
-            props.favourites.map((photo) => <Favourite key={photo.id} photoURL={photo.url}/>)
+            props.favourites.map((photo) => <Photo photo={photo} favourite={true}/>)
         );
     } else return (
-      <span>Favourites</span>
+        <span>Список избранного пуст</span>
     );
 };
 

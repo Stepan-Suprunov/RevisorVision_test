@@ -18,7 +18,7 @@ const Photos = (props) => {
 
     return (
         <div>
-            {photos.map((photo) => <Photo key={photo.id} photo={photo}/>)}
+            {photos.map((photo) => <Photo key={photo.id} photo={photo} favourite={false}/>)}
         </div>
     );
 };
