@@ -5,7 +5,7 @@ import {addPictureActionCreator, removePictureActionCreator} from "../../../../r
 const Photo = (props) => {
 
     const [favourite, setFavourite] = useState(props.favourite);
-console.log(favourite);
+
     const onButtonFavouriteClick = () => {
         setFavourite((prevState) => !prevState);
 
