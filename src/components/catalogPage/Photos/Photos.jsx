@@ -18,7 +18,7 @@ const Photos = (props) => {
 
     return (
         <div>
-            {photos.map((photo) => <Photo photoURL={photo.url}/>)}
+            {photos.map((photo) => <Photo key={photo.id} photo={photo} favourite={false}/>)}
         </div>
     );
 };

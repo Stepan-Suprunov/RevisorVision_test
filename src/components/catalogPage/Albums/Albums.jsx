@@ -18,7 +18,7 @@ const Albums = (props) => {
 
     return (
         <li>
-                {albums.map((album) => <Album albumTitle={album.title} albumID={album.albumId}/>)}
+            {albums.map((album) => <Album key={album.albumId} albumTitle={album.title} albumID={album.albumId}/>)}
         </li>
     );
 };

@@ -1,6 +1,5 @@
-import Albums from "../../Albums/Albums";
 import {useState} from "react";
-import album from "../../Albums/Album/Album";
+import Albums from "../../Albums/Albums";
 
 const User = (props) => {
 
