@@ -24,21 +24,24 @@
 
 .modalContent {
     position: relative;
-    margin: 20px;
-    width: 100%;
-    max-width: 600px;
-    background-color: chartreuse;
-    padding: 40px 20px 20px 20px;
-    transform: translateY(-50px);
+    width: 600px;
     transition: opacity 0.3s, transform 0.3s;
+}
+
+.modalContent img {
+    width: 600px;
 }
 
 .modalCloseButton {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 30px;
-    height: 30px;
+    border: none;
+    cursor: pointer;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
     padding: 0;
+    font-size: 40px;
+    color: white;
     background-color: transparent;
 }
