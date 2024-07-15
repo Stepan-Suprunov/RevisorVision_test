@@ -1,8 +1,13 @@
 import Photos from "../../Photos/Photos";
-import {useState} from "react";
+import React, {useState} from "react";
 
+type Props = {
+    key: string
+    albumTitle: string
+    albumID: string
+};
 
-const Album = (props) => {
+const Album: React.FC<Props> = (props) => {
 
     const [photos, setPhotos] = useState(false);
 

@@ -1,9 +1,17 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import {connect} from "react-redux";
-import {addPictureActionCreator, removePictureActionCreator} from "../../../../redux/favouritesReducer";
+import {addPictureActionCreator, PhotoType, removePictureActionCreator} from "../../../../redux/favouritesReducer";
 import {Modal} from "../../../Modal/Modal";
 
-const Photo = (props) => {
+type Props = {
+    photo: PhotoType
+    favourite: boolean
+    key: string
+    addPictureActionCreator?: (picture: PhotoType) => void
+    removePictureActionCreator?: (picture: PhotoType) => void
+};
+
+const Photo: React.FC<Props> = (props) => {
 
     const [favourite, setFavourite] = useState(props.favourite);
 
@@ -13,9 +21,9 @@ const Photo = (props) => {
         setFavourite((prevState) => !prevState);
 
         if (!favourite) {
-            props.addPictureActionCreator(props.photo);
+            props.addPictureActionCreator?.(props.photo);
         } else {
-            props.removePictureActionCreator(props.photo);
+            props.removePictureActionCreator?.(props.photo);
         };
     };
 

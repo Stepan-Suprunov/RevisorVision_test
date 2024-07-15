@@ -1,7 +1,14 @@
 const ADD_PICTURE = 'ADD-PICTURE';
 const REMOVE_PICTURE = 'REMOVE-PICTURE';
 
-const initialState = [];
+export type PhotoType = {
+    albumId: string
+    id: string
+    title: string
+    url: string
+};
+
+const initialState: PhotoType[] = [];
 
 export const favouritesReducer = (state = initialState, action) => {
     switch (action.type) {

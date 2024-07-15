@@ -1,6 +1,12 @@
 import Photo from "../catalogPage/Photos/Photo/Photo";
+import React from "react";
+import {PhotoType} from "../../redux/favouritesReducer";
 
-const Favourites = (props) => {
+type Props = {
+    favourites: PhotoType[]
+}
+
+const Favourites: React.FC<Props> = (props) => {
 
 
     if (props.favourites.length > 0) {

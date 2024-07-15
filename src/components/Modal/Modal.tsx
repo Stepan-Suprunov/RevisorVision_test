@@ -1,6 +1,14 @@
 import classes from './Modal.module.css';
+import React from "react";
 
-export const Modal = ({isOpen, onClose, children}) => {
+
+type Props = {
+    isOpen: boolean
+    onClose: () => void
+    children: React.ReactNode
+};
+
+export const Modal: React.FC<Props> = ({isOpen, onClose, children}) => {
     return (
         <>
             {isOpen && (

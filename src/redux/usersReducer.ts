@@ -1,6 +1,13 @@
 const USERS_FETCH = 'USERS-FETCH';
 
-const initialState = [];
+export type Users = {
+    id: string
+    name: string
+    username: string
+    email: string
+};
+
+const initialState : Users[] = [];
 
 export const usersReducer = (state = initialState, action) => {
     switch (action.type) {

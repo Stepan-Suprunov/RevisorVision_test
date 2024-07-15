@@ -1,7 +1,13 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import Albums from "../../Albums/Albums";
 
-const User = (props) => {
+type Props = {
+    userName: string
+    userID: string
+    key: string
+};
+
+const User: React.FC<Props> = (props) => {
 
     const [albums, setAlbums] = useState(false);
 

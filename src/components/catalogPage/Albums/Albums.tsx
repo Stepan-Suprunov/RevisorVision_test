@@ -1,14 +1,24 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Album from "./Album/Album";
 
-const Albums = (props) => {
+type Props = {
+    userID: string
+};
 
-    const [albums, setAlbums] = useState([]);
+type AlbumsType = {
+    albumId: string
+    userId: string
+    title: string
+};
+
+const Albums: React.FC<Props> = (props) => {
+
+    const [albums, setAlbums] = useState<AlbumsType[]>([]);
 
     useEffect(() => {
         axios.get(
-            'api/albums/' + props.userID, {withCredentials: false}
+            'api/albums/' + props.userID
         )
             .then((response) => {
                 const allAlbums = response.data;
